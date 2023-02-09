@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "John",
+    "email": "johnDoe@gmail.com",
+    "username": "johnDoe",
+    "dateOfBirth": "24/08/1992",
+    "hourOfBirth": "12:00",
+    "cityOfBirth": "New York",
+    "gender": "male",
+    "genderLooking": "female",
+    "relathionshipLooking": "serious"
+  },
+  {
+    "id": 2,
+    "name": "Jane",
+    "email": "janeDoe@gmail.com",
+    "username": "janeDoe",
+    "dateOfBirth": "15/06/1995",
+    "hourOfBirth": "14:00",
+    "cityOfBirth": "Los Angeles",
+    "gender": "female",
+    "genderLooking": "male",
+    "relationshipLooking": "casual"
+  },
+  {
+    "id": 3,
+    "name": "Emily",
+    "email": "emilySmith@gmail.com",
+    "username": "emilySmith",
+    "dateOfBirth": "21/12/1997",
+    "hourOfBirth": "20:00",
+    "cityOfBirth": "Chicago",
+    "gender": "female",
+    "genderLooking": "male",
+    "relationshipLooking": "serious"
+  },
+  {
+    "id": 4,
+    "name": "Michael",
+    "email": "michaelJohnson@gmail.com",
+    "username": "michaelJohnson",
+    "dateOfBirth": "30/03/1990",
+    "hourOfBirth": "09:00",
+    "cityOfBirth": "Houston",
+    "gender": "male",
+    "genderLooking": "female",
+    "relationshipLooking": "casual"
+  },
+  {
+    "id": 5,
+    "name": "William",
+    "email": "williamBrown@gmail.com",
+    "username": "williamBrown",
+    "dateOfBirth": "01/01/1993",
+    "hourOfBirth": "12:00",
+    "cityOfBirth": "Philadelphia",
+    "gender": "male",
+    "genderLooking": "female",
+    "relationshipLooking": "serious"
+  }
+]
