@@ -1,16 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import { BrowserRouter } from 'react-router-dom';
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import HoroscopeProvider from './context/horoscope.context';
+import HoroscopeProvider from './components/context/horoscope/horoscope.context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <HoroscopeProvider>
-      <App />
-    </HoroscopeProvider>
+    <BrowserRouter>
+      <HoroscopeProvider>
+        <App />
+      </HoroscopeProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
