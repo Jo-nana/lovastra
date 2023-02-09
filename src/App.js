@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState, useEffect } from 'react';
 
 function App() {
+  const [json, setJson] = useState({});
+
+  useEffect(() => {
+    const URL = 'https://aztro.sameerkumar.website/?sign=taurus&day=today';
+    fetch(URL, {
+      method: 'POST'
+    }).then(response => response.json())
+      .then(json => { setJson(json) });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      Current Date: {json.current_date} <br />
+      Compatibility: {json.compatibility} <br />
+      Lucky Number: {json.lucky_number} <br />
+      Lucky Time: {json.lucky_time} <br />
+      Color: {json.color} <br />
+      Date Range: {json.date_range} <br />
+      Mood: {json.mood} <br />
+      Description: {json.description} <br />
     </div>
   );
 }
