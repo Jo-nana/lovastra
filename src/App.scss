@@ -1,8 +1,8 @@
+@import 'index.scss';
+
 body {
-  background-color: #281F70;
-  font-family: 'lato', 'sans-serif';
-  font-size: 16px;
-  color: #ECECEC;
-  margin: 0;
-  padding: 0;
+  background-color: $background-color;
+  font-family: $lato;
+  color: $secondary-color;
+
 }

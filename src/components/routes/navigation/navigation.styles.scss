@@ -1,0 +1,23 @@
+@import '../../../index.scss';
+
+.navigation {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  font-size: $medium-title;
+  font-weight: $light-font-weight;
+  font-family: $lato;
+  margin: 30px 20px;
+
+  a{
+    text-decoration: none;
+    color: $secondary-color;
+  }
+  .nav-links-container {
+
+    .nav-link {
+      padding: 0 30px;
+      cursor: pointer;
+    }
+  }
+}
