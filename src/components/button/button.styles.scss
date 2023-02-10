@@ -1,0 +1,34 @@
+.button-container {
+  min-width: 125px;
+  width: auto;
+  height: 50px;
+  letter-spacing: 0.5px;
+  line-height: 50px;
+  padding: 0 35px 0 35px;
+  font-size: 15px;
+  background-color: #FF4F4C;
+  color: #ECECEC;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: #ECECEC;
+    color: #FF4F4C;
+    transition: 0.2s ease-in-out;
+  }
+
+  &.secondary-button {
+    background-color: #ECECEC;
+    color: #FF4F4C;
+
+    &:hover {
+      background-color:#FF4F4C;
+      color: #ECECEC;
+      transition: 0.2s ease-in-out;
+    }
+  }
+}

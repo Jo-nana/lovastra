@@ -1,13 +1,29 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
+import { Fragment } from 'react';
 
 const Navigation = () => {
   return(
-   <div>
+   <Fragment>
      <div>
-       <h1>Navigation bar</h1>
+        <div>
+          <Link className="nav-logo" to="/">
+            Lovastra
+          </Link>
+        </div>
+       <div className="nav-link-container">
+         <Link className="nav-link" to="/aboutus">
+            About us
+         </Link>
+         <Link className="nav-link" to="/horoscope">
+            Horoscope
+         </Link>
+         <Link className="nav-link" to="/astraltheme">
+            Astral Theme
+         </Link>
+       </div>
      </div>
      <Outlet />
-   </div>
+   </Fragment>
   )
 }
 

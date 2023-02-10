@@ -1,23 +1,13 @@
-import { HoroscopeContext } from '../../context/horoscope/horoscope.context';
-import React, { useContext } from 'react';
-
+import Button from '../../button/button.component.jsx';
 
 const Home  = () => {
-
-  const { horoscopeData } = useContext(HoroscopeContext);
-
-  return (
+  return(
     <div>
-      Current Date: {horoscopeData.current_date} <br />
-      Compatibility: {horoscopeData.compatibility} <br />
-      Lucky Number: {horoscopeData.lucky_number} <br />
-      Lucky Time: {horoscopeData.lucky_time} <br />
-      Color: {horoscopeData.color} <br />
-      Date Range: {horoscopeData.date_range} <br />
-      Mood: {horoscopeData.mood} <br />
-      Description: {horoscopeData.description} <br />
+      <h1>Blast off into the unknown and find your cosmic match!</h1>
+      <h2>Try Lovastra</h2>
+      <Button buttonType='secondary-button'>Start</Button>
     </div>
-  );
+  )
 }
 
 export default Home;
