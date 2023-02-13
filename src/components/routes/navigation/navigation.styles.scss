@@ -15,9 +15,16 @@
 
   .navbar-brand{
     font-size: $large-title;
+    position: relative;
     &:hover{
       color: $secondary-color;
     }
+  }
+
+  .navbar-image{
+    position: absolute;
+    top: -339px;
+    left: -272px;
   }
 
   .navbar-collapse {

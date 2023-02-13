@@ -11,10 +11,8 @@ const Navigation = () => {
     <Fragment>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="nav-container">
-          <div style={{position: "relative"}}>
-            <Link className="navbar-brand" to="/">Lovastra</Link>
-            <img src={Sun} alt="sun" style={{position: "absolute", top: "-339px", left: "-309px"}} />
-          </div>
+          <img src={Sun} alt="sun" className="navbar-image"/>
+          <Link className="navbar-brand" to="/">Lovastra</Link>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
