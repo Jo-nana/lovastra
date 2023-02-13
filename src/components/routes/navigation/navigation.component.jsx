@@ -5,8 +5,6 @@ import Button from '../../button/button.component.jsx';
 import './navigation.styles.scss';
 
 const Navigation = () => {
-
-
   return(
    <Fragment>
      <div className="navigation-bar">

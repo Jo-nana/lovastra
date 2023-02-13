@@ -1,5 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/routes/home/home.component';
+import AboutUs from './components/routes/aboutUs/aboutUs.component';
+import AstralTheme from './components/routes/astralTheme/astralTheme.component';
+import Horoscope from './components/routes/horoscope/horoscope.component';
 import Navigation from './components/routes/navigation/navigation.component';
 
 import './App.scss'
@@ -9,6 +12,9 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Navigation />}>
         <Route index element={<Home />} />
+        <Route path="aboutUs" element={<AboutUs />} />
+        <Route path="astralTheme" element={<AstralTheme />} />
+        <Route path="horoscope" element={<Horoscope />} />
       </Route>
     </Routes>
   )
