@@ -1,6 +1,8 @@
 @import '../../../index.scss';
 
-.container {
+.main-container {
+  width: 80%;
+  margin: 0 auto;
   background-color: $background-color ;
   font-family: $lato;
   color: $secondary-color;
@@ -9,11 +11,14 @@
     padding-top: 100px;
   }
 
+  img {
+    display: flex;
+    margin: 0 auto;
+  }
   .home-info{
     display: flex;
     flex-direction: column;
     justify-content: center;
-
 
     h1, h2{
       font-weight: 300;

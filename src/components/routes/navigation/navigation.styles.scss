@@ -1,23 +1,40 @@
 @import '../../../index.scss';
 
-.navigation-bar {
-  height: 70px;
-  display: flex;
-  justify-content: space-between;
-  font-size: $medium-title;
-  font-weight: $light-font-weight;
-  font-family: $lato;
-  margin: 30px 20px;
+.navbar{
+  background-color: $background-color !important;
 
+  .nav-container{
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 80%;
+    align-items: center;
+    margin-bottom: 10vh;
+  }
+
+  .navbar-brand{
+    font-size: $large-title;
+    &:hover{
+      color: $secondary-color;
+    }
+  }
+
+  .navbar-collapse {
+    justify-content: center;
+  }
   a{
     text-decoration: none;
     color: $secondary-color;
+    font-size: $medium-title ;
+    font-weight: $light-font-weight;
   }
-  .nav-links-container {
-    display: flex;
-    .nav-link {
-      padding: 0 30px;
-      cursor: pointer;
+
+  .nav-link {
+    padding: 0 30px;
+    cursor: pointer;
+    &:hover {
+      color: $primary-color;
     }
   }
+
 }
