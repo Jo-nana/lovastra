@@ -1,0 +1,23 @@
+@import '../../../index.scss';
+
+.container {
+  background-color: $background-color ;
+  font-family: $lato;
+  color: $secondary-color;
+
+  .home-container{
+    padding-top: 100px;
+  }
+
+  .home-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+    h1, h2{
+      font-weight: 300;
+      padding-bottom: 15px;
+    }
+  }
+}

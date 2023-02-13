@@ -9,7 +9,7 @@ const Navigation = () => {
 
   return(
    <Fragment>
-     <div className="navigation">
+     <div className="navigation-bar">
         <div>
           <Link className="nav-logo" to="/">
             Lovastra

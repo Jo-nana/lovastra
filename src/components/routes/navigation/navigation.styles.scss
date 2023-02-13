@@ -1,6 +1,6 @@
 @import '../../../index.scss';
 
-.navigation {
+.navigation-bar {
   height: 70px;
   display: flex;
   justify-content: space-between;
@@ -14,7 +14,7 @@
     color: $secondary-color;
   }
   .nav-links-container {
-
+    display: flex;
     .nav-link {
       padding: 0 30px;
       cursor: pointer;
