@@ -2,39 +2,19 @@ import { Outlet, Link } from 'react-router-dom';
 import { Fragment } from 'react';
 import Button from '../../button/button.component.jsx';
 
+import Sun from '../../../assets/images/sun.svg';
+
 import './navigation.styles.scss';
 
 const Navigation = () => {
-  // return(
-  //  <Fragment>
-  //    <div className="navigation-bar">
-  //       <div>
-  //         <Link className="nav-logo" to="/">
-  //           Lovastra
-  //         </Link>
-  //       </div>
-  //      <div className="nav-links-container">
-  //        <Link className="nav-link" to="/aboutus">
-  //           About us
-  //        </Link>
-  //        <Link className="nav-link" to="/horoscope">
-  //           Horoscope
-  //        </Link>
-  //        <Link className="nav-link" to="/astraltheme">
-  //           Astral Theme
-  //        </Link>
-  //      </div>
-  //      <Button buttonType="small">Sign in</Button>
-  //    </div>
-  //    <Outlet />
-  //  </Fragment>
-  // )
-
   return (
     <Fragment>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="nav-container">
-          <Link className="navbar-brand" to="/">Lovastra</Link>
+          <div style={{position: "relative"}}>
+            <Link className="navbar-brand" to="/">Lovastra</Link>
+            <img src={Sun} alt="sun" style={{position: "absolute", top: "-339px", left: "-309px"}} />
+          </div>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
