@@ -1,8 +1,18 @@
+import React, { useContext } from 'react';
+import { HoroscopeContext } from '../../context/horoscope/horoscope.context';
+
 const Horoscope = () => {
+
+  const { horoscopeData } = useContext(HoroscopeContext);
+
   return(
     <div className="container">
-      <h1>Horoscope</h1>
-      <p>Work in progress</p>
+      <div>
+        {/* render the horoscope data */}
+        <h1>{horoscopeData.current_date}</h1>
+        <h2>{horoscopeData.date_range}</h2>
+        <p>{horoscopeData.description}</p>
+      </div>
     </div>
   )
 }
