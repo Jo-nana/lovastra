@@ -1,0 +1,58 @@
+@import '../../../index.scss';
+
+.card{
+  width: 95%;
+  border-radius: 26px;
+  background: linear-gradient(145deg, #2b2178, #241c65);
+  box-shadow:  28px 28px 56px #1e1855,
+             -28px -28px 56px #32268b;
+  padding: 20px 15px;
+  cursor: pointer;
+
+  .img{
+    width: 80%;
+    height: 80%;
+    border-radius: 5px;
+  }
+  p{
+    color: $secondary-color;
+    font-size: 24px;
+    font-weight: $light-font-weight;
+    font-family: $lato;
+    text-align: center;
+    margin-top: 8px;
+    font-style: italic;
+  }
+}
+
+#horoscope-title{
+  color: $secondary-color;
+  font-size: 4rem;
+  font-weight: $light-font-weight;
+  font-family: $lato;
+  text-align: center;
+  margin: 10px 0 50px 0;
+}
+
+
+.card-header{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.5px solid $secondary-color;
+
+  h2{
+    color: $secondary-color;
+    font-size: 2rem;
+    font-weight: $regular-font-weight;
+    font-family: $lato;
+  }
+
+  .btn{
+    background-color: $primary-color;
+    border: none;
+
+    &:hover{
+      opacity: 0.8;
+    }
+  }
+}

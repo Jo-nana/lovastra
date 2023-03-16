@@ -1,5 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { HoroscopeContext } from '../../context/horoscope/horoscope.context';
+import './horoscope.styles.scss';
 
 // importing the images for each signs
 import ariesImage from '../../../assets/images/logoSigns/aries.svg';
@@ -34,20 +35,61 @@ const signs = [
 
 
 const Horoscope = () => {
-  const { horoscopeData } = useContext(HoroscopeContext);
+  const { horoscopeData, setSign } = useContext(HoroscopeContext);
+  const [showHoroscope, setShowHoroscope] = useState(false);
+  const [showCards, setShowCards] = useState(true);
+  const [selectedSign, setSelectedSign] = useState('');
 
-  return(
+  // handle click on each card to show the horoscope info
+  const handleClick = (sign) => {
+    setSign(sign.name.toLowerCase());
+    setSelectedSign(sign.name);
+    setShowHoroscope(true);
+    setShowCards(false);
+  };
+  console.log(handleClick)
+
+  // handle click on the X button to hide the horoscope info
+  const handleHideHoroscope = () => {
+    setShowHoroscope(false);
+    setShowCards(true);
+  };
+
+  return (
     <div className="container">
-      <div>
-      {signs.map((sign) => (
-        <div className="sign-card" key={sign.name}>
-          <img src={sign.imgSrc} alt={sign.name} />
-          <p>{sign.name}</p>
+      <h1 id="horoscope-title">{horoscopeData.current_date}</h1>
+
+      {/** show the cards if showCards is true */}
+      {showCards && (
+        <div className="row">
+          {signs.map((sign) => (
+            <div className="col-md-3 mb-3" key={sign.name} onClick={() => handleClick(sign)}>
+              <div className="card">
+                <img src={sign.imgSrc} alt={sign.name} />
+                <p>{sign.name}</p>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
-      </div>
+      )}
+
+      {/** show the horoscope info if showHoroscope is true */}
+      {showHoroscope && (
+        <div className="row">
+          <div className="col-md-12">
+            <div className="card">
+              <div className="card-header">
+                <h2>{selectedSign}</h2>
+                <button className="btn btn-danger" onClick={handleHideHoroscope}>X</button>
+              </div>
+                <p>{horoscopeData.description}</p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
-  )
-}
+  );
+};
+
 
 export default Horoscope;
