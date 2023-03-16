@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import Button from '../../button/button.component.jsx';
 import { HoroscopeContext } from '../../context/horoscope/horoscope.context';
 import './horoscope.styles.scss';
 
@@ -82,7 +83,20 @@ const Horoscope = () => {
                 <h2>{selectedSign}</h2>
                 <button className="btn btn-danger" onClick={handleHideHoroscope}>X</button>
               </div>
-                <p>{horoscopeData.description}</p>
+              <div className="row">
+                <div className="col-md-6">
+                  <p>Color:  {horoscopeData.color}</p>
+                  <p>Lucky Number:  {horoscopeData.lucky_number}</p>
+                  <p>Lucky Time:  {horoscopeData.lucky_time}</p>
+                </div>
+                <div className="col-md-6">
+                  <p>{horoscopeData.description}</p>
+                </div>
+                <div id="bottom-line">
+                  <p>Wanna now what is the sign of your other half ?</p>
+                  <Button buttonType='secondary-button'> Sign Up</Button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
