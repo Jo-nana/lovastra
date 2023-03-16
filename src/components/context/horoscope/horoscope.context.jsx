@@ -3,18 +3,18 @@ import React, { useState, useEffect } from 'react';
 // Create a context for the horoscope data
 export const HoroscopeContext = React.createContext();
 
-const HoroscopeProvider = ({ children }) => {
+const HoroscopeProvider = ({ children, sign }) => {
   // set the initial state of the horoscope data
   const [horoscopeData, setHoroscopeData] = useState({});
 
   // fetch the horoscope data from the API
   useEffect(() => {
-    const URL = 'https://aztro.sameerkumar.website/?sign=taurus&day=today';
+    const URL = `https://aztro.sameerkumar.website/?sign=${sign}&day=today`;
     fetch(URL, {
       method: 'POST'
     }).then(response => response.json())
       .then(json => { setHoroscopeData(json) });
-  }, []);
+  }, [sign]); // will update the horoscope data when the sign changes
 
   // return the context provider with the horoscope data
   return (
