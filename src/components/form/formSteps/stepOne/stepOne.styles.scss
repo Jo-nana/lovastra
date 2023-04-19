@@ -1,0 +1,36 @@
+@import '../../../../index.scss';
+
+.form-step-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .label-container{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+  }
+
+  .form-input{
+    width: 100%;
+    margin: 10px 0;
+    height: 50px;
+    background-color: $background-color;
+    border: 1px solid $secondary-color;
+    border-radius: 5px;
+    color: $secondary-color;
+  }
+
+  input::placeholder {
+    color: rgba(236, 236, 236, 0.5);
+  }
+}
+
+h1{
+  font-weight: 200;
+  .highlighted-text{
+    color: $primary-color;
+    font-weight: 400;
+  }
+}

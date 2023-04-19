@@ -9,9 +9,10 @@ const StepFour = ({ formData, setFormData, onNext, onPrevious }) => {
     setPicture(event.target.files[0]);
   }, []);
 
-  // handle tag selection
+  // handle tag selection by creating a new array of tags
   const handleTagClick = useCallback((tag) => {
     setTags((prevTags) => {
+      // if the tag is already selected, remove it
       if (prevTags.includes(tag)) {
         return prevTags.filter((t) => t !== tag);
       } else {

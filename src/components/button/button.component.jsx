@@ -6,14 +6,16 @@ const BUTTON_TYPES_CLASSES ={
   small: 'small-primary'
 }
 
-const Button = ({children, buttonType, ...otherProps}) => {
+const Button = ({ children, buttonType, isDisabled, ...otherProps }) => {
   return (
-    <button className={`button-container ${BUTTON_TYPES_CLASSES[buttonType]}`}
-    {...otherProps}
+    <button
+      className={`button-container ${BUTTON_TYPES_CLASSES[buttonType]}`}
+      disabled={isDisabled}
+      {...otherProps}
     >
       {children}
     </button>
-  )
-}
+  );
+};
 
 export default Button;
