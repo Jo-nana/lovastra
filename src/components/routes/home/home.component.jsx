@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Button from '../../button/button.component.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -13,9 +14,11 @@ const Home  = () => {
           <h1>Blast off into the unknown and find your cosmic match!</h1>
           <h1>Try <strong>Lovastra.</strong></h1>
           <div style={{ maxWidth: "150px", marginTop: "20px" }}>
-            <Button buttonType='secondary-button'>
-              Start
-            </Button>
+            <Link to="/signUp">
+              <Button buttonType='secondary-button'>
+                Start
+              </Button>
+            </Link>
           </div>
         </div>
         <div className="col-sm-6">
