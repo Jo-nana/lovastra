@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import StepOne from '../formSteps/stepOne/stepOne.component';
 import StepTwo from '../formSteps/stepTwo/stepTwo.component';
+import StepThree from '../formSteps/stepThree/stepThree.component';
 
 import './signUpForm.styles.scss';
 
@@ -12,7 +13,10 @@ const SignUpForm = () => {
     password: '',
     dateOfBirth: '',
     hourOfBirth: '',
-    placeOfBirth: ''
+    placeOfBirth: '',
+    gender: '',
+    lookingFor: '',
+    relationshipType: ''
   });
   const [currentStep, setCurrentStep] = useState(1);
 
@@ -26,7 +30,6 @@ const SignUpForm = () => {
 
   return (
     <div className="form-container">
-      <h1>Four steps left to find your cosmic match</h1>
       {currentStep === 1 && (
         <StepOne
           formData={formData}
@@ -36,6 +39,14 @@ const SignUpForm = () => {
       )}
       {currentStep === 2 && (
         <StepTwo
+          formData={formData}
+          setFormData={setFormData}
+          onPrevious={handlePrevious}
+          onNext={handleNext}
+        />
+      )}
+      {currentStep === 3 && (
+        <StepThree
           formData={formData}
           setFormData={setFormData}
           onPrevious={handlePrevious}
