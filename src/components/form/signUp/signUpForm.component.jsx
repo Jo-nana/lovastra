@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import StepOne from '../formSteps/stepOne/stepOne.component';
 import StepTwo from '../formSteps/stepTwo/stepTwo.component';
 import StepThree from '../formSteps/stepThree/stepThree.component';
+import StepFour from '../formSteps/stepFour/stepFour.component';
 
 import './signUpForm.styles.scss';
 
@@ -16,7 +17,9 @@ const SignUpForm = () => {
     placeOfBirth: '',
     gender: '',
     lookingFor: '',
-    relationshipType: ''
+    relationshipType: '',
+    picture: null,
+    tags: [],
   });
   const [currentStep, setCurrentStep] = useState(1);
 
@@ -53,7 +56,13 @@ const SignUpForm = () => {
           onNext={handleNext}
         />
       )}
-      {/* add more steps here */}
+      {currentStep === 4 && (
+        <StepFour
+          formData={formData}
+          setFormData={setFormData}
+          onPrevious={handlePrevious}
+        />
+      )}
     </div>
   );
 }
