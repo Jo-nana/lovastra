@@ -4,7 +4,7 @@ import Button from "../../../button/button.component";
 
 import './stepFour.styles.scss';
 
-const StepFour = ({ formData, setFormData, onNext, onPrevious }) => {
+const StepFour = ({ formData, setFormData, onPrevious }) => {
   const [picture, setPicture] = useState(null);
   const [tags, setTags] = useState([]);
 
@@ -20,7 +20,12 @@ const StepFour = ({ formData, setFormData, onNext, onPrevious }) => {
       if (prevTags.includes(tag)) {
         return prevTags.filter((t) => t !== tag);
       } else {
-        return [...prevTags, tag];
+        // if the maximum number of tags (5) has been reached, do not add more
+        if (prevTags.length >= 5) {
+          return prevTags;
+        } else {
+          return [...prevTags, tag];
+        }
       }
     });
   }, []);
@@ -29,11 +34,10 @@ const StepFour = ({ formData, setFormData, onNext, onPrevious }) => {
     event.preventDefault();
     const newFormData = { ...formData, picture, tags };
     setFormData(newFormData);
-    onNext();
   };
 
   return (
-    <div className="step-four-container">
+    <div className="four-step-container">
       <h1>
         <span className="highlighted-text">One</span> step left to find your cosmic match
       </h1>
@@ -43,7 +47,7 @@ const StepFour = ({ formData, setFormData, onNext, onPrevious }) => {
           <p>Add you profil picture</p>
         </label>
         <label className="tag-form">
-          Select interests (up to 5)
+          <p>Select up to 5 interests</p>
           <div className="tag-container">
             {["✈️ Travel", "🍔 Food", "🎶 Music", "⚽️ Sports", "👗 Fashion", "📚 Books", "🎬 Movies", "🎨 Art", "💻 Tech", "🐱 Animals", "🌳 Nature"].map((tag) => (
               <button

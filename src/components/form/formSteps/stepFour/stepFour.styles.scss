@@ -7,6 +7,8 @@
   align-items: center;
 }
 
+
+
 .profile-tag-container{
   display: flex;
   justify-content: space-between;
@@ -24,6 +26,7 @@
   border-radius: 50%;
   overflow: hidden;
   cursor: pointer;
+  margin-right: 10vw;
 
   p{
     text-align: center;
@@ -54,42 +57,38 @@
 .tag-form{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  p{
+    font-size: $large-font-size;
+  }
+
 }
 
 .tag-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
-}
+  align-content: center;
 
-.tag-container button:nth-child(1),
-.tag-container button:nth-child(2),
-.tag-container button:nth-child(3) {
-  grid-column: span 3;
-}
+  .tag-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $background-color;
+    border: 1px solid $primary-color;
+    height: 40px;
+    width: 140px;
+    border-radius: 50px;
+    color: $secondary-color;
 
-.tag-container button:nth-child(4),
-.tag-container button:nth-child(5) {
-  grid-column: span 2;
-}
+    &:hover :focus{
+      background-color: $primary-color;
+    }
 
-.tag-button{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: $background-color;
-  border: 1px solid $primary-color;
-  height: 40px;
-  width: 140px;
-  border-radius: 50px;
-  color: $secondary-color;
+    &.selected{
+      background-color: $primary-color;
 
-  &:hover{
-    background-color: $primary-color;
-  }
+    }
 
-  &.selected{
-    background-color: $primary-color;
   }
 }
