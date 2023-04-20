@@ -1,4 +1,8 @@
 import { useState, useCallback } from "react";
+import Button from "../../../button/button.component";
+
+
+import './stepFour.styles.scss';
 
 const StepFour = ({ formData, setFormData, onNext, onPrevious }) => {
   const [picture, setPicture] = useState(null);
@@ -29,32 +33,38 @@ const StepFour = ({ formData, setFormData, onNext, onPrevious }) => {
   };
 
   return (
-    <div>
-      <h1>One step left to find your cosmic match</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Profile Picture
+    <div className="step-four-container">
+      <h1>
+        <span className="highlighted-text">One</span> step left to find your cosmic match
+      </h1>
+      <form onSubmit={handleSubmit} className="profile-tag-container">
+        <label className='upload-button'>
           <input type="file" accept="image/*" onChange={handlePictureChange} />
+          <p>Add you profil picture</p>
         </label>
-        <label>
+        <label className="tag-form">
           Select interests (up to 5)
-          {["travel", "food", "music", "sports", "fashion", "books", "movies", "art", "technology", "animals", "nature"].map((tag) => (
-            <button
-              key={tag}
-              className={tags.includes(tag) ? "selected" : ""}
-              onClick={() => handleTagClick(tag)}
-            >
-              {tag}
-            </button>
-          ))}
+          <div className="tag-container">
+            {["✈️ Travel", "🍔 Food", "🎶 Music", "⚽️ Sports", "👗 Fashion", "📚 Books", "🎬 Movies", "🎨 Art", "💻 Tech", "🐱 Animals", "🌳 Nature"].map((tag) => (
+              <button
+                key={tag}
+                className={`tag-button ${tags.includes(tag) ? "selected" : ""}`}
+                onClick={() => handleTagClick(tag)}
+              >
+                {tag}
+              </button>
+            ))}
+          </div>
         </label>
-        <button type="button" onClick={onPrevious}>
-          Previous
-        </button>
-        <button type="submit">
-          Submit
-        </button>
       </form>
+      <span className="form-buttons">
+        <Button buttonType="secondary" onClick={onPrevious}>
+          Previous
+        </Button>
+        <Button type="submit">
+          Submit
+        </Button>
+      </span>
     </div>
   );
 };

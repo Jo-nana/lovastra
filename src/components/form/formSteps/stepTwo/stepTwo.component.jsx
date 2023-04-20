@@ -1,4 +1,7 @@
 import { useCallback } from 'react';
+import Button from '../../../button/button.component';
+
+import './stepTwo.styles.scss'
 
 const StepTwo = ({formData, setFormData, onNext, onPrevious}) => {
   const handleInputChange = useCallback(
@@ -19,48 +22,58 @@ const StepTwo = ({formData, setFormData, onNext, onPrevious}) => {
 
   return (
     <div>
-      <h1>Three steps left to find your cosmic match</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
+      <h1>
+        <span className="highlighted-text">Three</span> steps left to find your cosmic match
+      </h1>
+      <form onSubmit={handleSubmit} className='form-step-container'>
+        <label className='label-container'>
           Real name
           <input
             type="text"
             name="realName"
+            placeholder="John"
             value={formData.realName}
             onChange={handleInputChange}
+            className="form-input"
           />
         </label>
-        <label>
+        <label className='label-container'>
           Date of birth
           <input
             type="date"
             name="dateOfBirth"
             value={formData.dateOfBirth}
             onChange={handleInputChange}
+            className="form-input"
           />
         </label>
-        <label>
+        <label className='label-container'>
           Hour of birth
           <input
             type="time"
             name="hourOfBirth"
             value={formData.hourOfBirth}
             onChange={handleInputChange}
+            className="form-input"
           />
         </label>
-        <label>
+        <label className='label-container'>
           Place of birth
           <input
             type="text"
             name="placeOfBirth"
+            placeholder="New York"
             value={formData.placeOfBirth}
             onChange={handleInputChange}
+            className="form-input"
           />
         </label>
-        <button type="button" onClick={onPrevious}>Previous</button>
-        <button type="submit" disabled={!isFormValid}>
-          Next
-        </button>
+        <div className="form-buttons">
+          <Button buttonType="secondary" onClick={onPrevious}>Previous</Button>
+          <Button type="submit" disabled={!isFormValid}>
+            Next
+          </Button>
+        </div>
       </form>
     </div>
   );

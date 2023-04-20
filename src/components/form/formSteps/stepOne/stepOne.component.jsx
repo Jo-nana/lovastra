@@ -62,9 +62,11 @@ const StepOne = ({formData, setFormData, onNext}) => {
             className="form-input"
           />
       </label>
+      <span className="next-button">
         <Button type="submit" disabled={!isFormValid}>
           Next
         </Button>
+      </span>
       </form>
     </div>
   );
