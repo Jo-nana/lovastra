@@ -32,9 +32,10 @@
   }
   a{
     text-decoration: none;
-    color: $secondary-color;
+    color: $secondary-color !important;
     font-size: $medium-title ;
     font-weight: $light-font-weight;
+
   }
 
   .nav-item {
@@ -46,6 +47,10 @@
     &:hover {
       color: $primary-color;
     }
+  }
+
+  .nav-link.active {
+    color: $primary-color !important;
   }
 
 }

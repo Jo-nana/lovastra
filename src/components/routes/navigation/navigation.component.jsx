@@ -1,4 +1,4 @@
-import { Outlet, Link } from 'react-router-dom';
+import { NavLink, Outlet, Link } from 'react-router-dom';
 import { Fragment } from 'react';
 import Button from '../../button/button.component.jsx';
 
@@ -19,13 +19,13 @@ const Navigation = () => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link className="nav-link" to="/aboutus">About us</Link>
+                <NavLink className="nav-link" activeClassName="active" to="/aboutus">About us</NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/horoscope">Horoscope</Link>
+                <NavLink className="nav-link" activeClassName="active" to="/horoscope">Horoscope</NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/astraltheme">Astral Theme</Link>
+                <NavLink className="nav-link" activeClassName="active" to="/astraltheme">Astral Theme</NavLink>
               </li>
             </ul>
           </div>
@@ -34,8 +34,7 @@ const Navigation = () => {
       </nav>
       <Outlet />
     </Fragment>
-  )
-
-}
+  );
+};
 
 export default Navigation;

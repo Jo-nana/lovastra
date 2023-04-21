@@ -20,11 +20,20 @@
     border: 1px solid $secondary-color;
     border-radius: 5px;
     color: $secondary-color;
+    padding-left: 8px;
   }
 
   input::placeholder {
     color: rgba(236, 236, 236, 0.5);
   }
+}
+
+// changing the color of the icon in date and time input in white
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
 }
 
 h1{

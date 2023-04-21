@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import { Fragment } from 'react';
+
 import StepOne from '../formSteps/stepOne/stepOne.component';
 import StepTwo from '../formSteps/stepTwo/stepTwo.component';
 import StepThree from '../formSteps/stepThree/stepThree.component';
 import StepFour from '../formSteps/stepFour/stepFour.component';
 
+import BackgroundIllustration from '../../../assets/images/Background-form.svg'
 import './signUpForm.styles.scss';
 
 const SignUpForm = () => {
@@ -32,38 +35,43 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className="form-container">
-      {currentStep === 1 && (
-        <StepOne
-          formData={formData}
-          setFormData={setFormData}
-          onNext={handleNext}
-        />
-      )}
-      {currentStep === 2 && (
-        <StepTwo
-          formData={formData}
-          setFormData={setFormData}
-          onPrevious={handlePrevious}
-          onNext={handleNext}
-        />
-      )}
-      {currentStep === 3 && (
-        <StepThree
-          formData={formData}
-          setFormData={setFormData}
-          onPrevious={handlePrevious}
-          onNext={handleNext}
-        />
-      )}
-      {currentStep === 4 && (
-        <StepFour
-          formData={formData}
-          setFormData={setFormData}
-          onPrevious={handlePrevious}
-        />
-      )}
-    </div>
+    <Fragment>
+      <div className="form-container">
+        {currentStep === 1 && (
+          <StepOne
+            formData={formData}
+            setFormData={setFormData}
+            onNext={handleNext}
+          />
+        )}
+        {currentStep === 2 && (
+          <StepTwo
+            formData={formData}
+            setFormData={setFormData}
+            onPrevious={handlePrevious}
+            onNext={handleNext}
+          />
+        )}
+        {currentStep === 3 && (
+          <StepThree
+            formData={formData}
+            setFormData={setFormData}
+            onPrevious={handlePrevious}
+            onNext={handleNext}
+          />
+        )}
+        {currentStep === 4 && (
+          <StepFour
+            formData={formData}
+            setFormData={setFormData}
+            onPrevious={handlePrevious}
+          />
+        )}
+      </div>
+      <div className="background-illustration">
+        <img src={BackgroundIllustration} alt="background-illustration" />
+      </div>
+    </Fragment>
   );
 }
 
