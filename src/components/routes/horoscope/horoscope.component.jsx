@@ -1,7 +1,9 @@
 import React, { useContext, useState } from 'react';
 import Button from '../../button/button.component.jsx';
 import { HoroscopeContext } from '../../context/horoscope/horoscope.context';
+
 import './horoscope.styles.scss';
+import strings from '../../../string.js';
 
 // importing the images for each signs
 import ariesImage from '../../../assets/images/logoSigns/aries.svg';
@@ -85,16 +87,16 @@ const Horoscope = () => {
               </div>
               <div className="row">
                 <div className="col-md-6">
-                  <p>Color:  {horoscopeData.color}</p>
-                  <p>Lucky Number:  {horoscopeData.lucky_number}</p>
-                  <p>Lucky Time:  {horoscopeData.lucky_time}</p>
+                  <p>{strings.horoscopePage.colorText}:  {horoscopeData.color}</p>
+                  <p>{strings.horoscopePage.luckyNumberText}:  {horoscopeData.lucky_number}</p>
+                  <p>{strings.horoscopePage.luckyTimeText}:  {horoscopeData.lucky_time}</p>
                 </div>
                 <div className="col-md-6">
                   <p>{horoscopeData.description}</p>
                 </div>
                 <div id="bottom-line">
-                  <p>Wanna now what is the sign of your other half ?</p>
-                  <Button buttonType='secondary-button'> Sign Up</Button>
+                  <p>{strings.horoscopePage.messageText}</p>
+                  <Button>{strings.general.signUpButtonText}</Button>
                 </div>
               </div>
             </div>

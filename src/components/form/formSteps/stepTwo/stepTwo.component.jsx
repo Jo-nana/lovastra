@@ -1,7 +1,9 @@
 import { useCallback } from 'react';
 import Button from '../../../button/button.component';
 
-import './stepTwo.styles.scss'
+import strings from '../../../../string';
+
+import './stepTwo.styles.scss';
 
 const StepTwo = ({formData, setFormData, onNext, onPrevious}) => {
   const handleInputChange = useCallback(
@@ -17,17 +19,26 @@ const StepTwo = ({formData, setFormData, onNext, onPrevious}) => {
     onNext();
   };
 
+  // variables to handle strings group
+  const string = strings.secondStepForm
+  const generalString = strings.general
+
+  // split the header text for styling
+  const headerText =  string.headerText;
+  const firstWord = headerText.split(' ')[0]; // target the first word of the sentence
+  const restOfString = headerText.slice(firstWord.length +1); // give the rest of the sentence
+
   const isFormValid =
   formData.realName && formData.dateOfBirth && formData.hourOfBirth && formData.placeOfBirth;
 
   return (
     <div>
       <h1>
-        <span className="highlighted-text">Three</span> steps left to find your cosmic match
+        <span className="highlighted-text">{firstWord}</span> {restOfString}
       </h1>
       <form onSubmit={handleSubmit} className='form-step-container'>
         <label className='label-container'>
-          Real name
+          {string.realNameText}
           <input
             type="text"
             name="realName"
@@ -38,7 +49,7 @@ const StepTwo = ({formData, setFormData, onNext, onPrevious}) => {
           />
         </label>
         <label className='label-container'>
-          Date of birth
+          {string.dateOfBirthText}
           <input
             type="date"
             name="dateOfBirth"
@@ -48,7 +59,7 @@ const StepTwo = ({formData, setFormData, onNext, onPrevious}) => {
           />
         </label>
         <label className='label-container'>
-          Hour of birth
+          {string.hourOfBirthText}
           <input
             type="time"
             name="hourOfBirth"
@@ -58,7 +69,7 @@ const StepTwo = ({formData, setFormData, onNext, onPrevious}) => {
           />
         </label>
         <label className='label-container'>
-          Place of birth
+          {string.placeOfBirthText}
           <input
             type="text"
             name="placeOfBirth"
@@ -69,9 +80,11 @@ const StepTwo = ({formData, setFormData, onNext, onPrevious}) => {
           />
         </label>
         <div className="form-buttons">
-          <Button buttonType="secondary" onClick={onPrevious}>Previous</Button>
+          <Button buttonType="secondary" onClick={onPrevious}>
+            {generalString.previousButtonText}
+          </Button>
           <Button type="submit" disabled={!isFormValid}>
-            Next
+            {generalString.nextButtonText}
           </Button>
         </div>
       </form>

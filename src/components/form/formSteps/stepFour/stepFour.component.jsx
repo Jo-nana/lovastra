@@ -1,6 +1,7 @@
 import { useState, useCallback } from "react";
 import Button from "../../../button/button.component";
 
+import strings from '../../../../string'
 
 import './stepFour.styles.scss';
 
@@ -36,20 +37,31 @@ const StepFour = ({ formData, setFormData, onPrevious }) => {
     setFormData(newFormData);
   };
 
+  // variables to handle strings group
+  const string = strings.fourthStepForm;
+  const tagsArray = Object.values(string.tags); // get the value of the tags objects and create an array
+  const generalString = strings.general
+
+   // split the header text for styling
+   const headerText =  string.headerText;
+   const firstWord = headerText.split(' ')[0]; // target the first word of the sentence
+   const restOfString = headerText.slice(firstWord.length +1); // give the rest of the sentence
+
+
   return (
     <div className="four-step-container">
       <h1>
-        <span className="highlighted-text">One</span> step left to find your cosmic match
+        <span className="highlighted-text">{firstWord}</span> {restOfString}
       </h1>
       <form onSubmit={handleSubmit} className="profile-tag-container">
         <label className='upload-button'>
           <input type="file" accept="image/*" onChange={handlePictureChange} />
-          <p>Add you profil picture</p>
+          <p>{string.profilePictureText}</p>
         </label>
         <label className="tag-form">
-          <p>Select up to 5 interests</p>
+          <p>{string.interestText}</p>
           <div className="tag-container">
-            {["✈️ Travel", "🍔 Food", "🎶 Music", "⚽️ Sports", "👗 Fashion", "📚 Books", "🎬 Movies", "🎨 Art", "💻 Tech", "🐱 Animals", "🌳 Nature"].map((tag) => (
+            {tagsArray.map((tag) => (
               <button
                 key={tag}
                 className={`tag-button ${tags.includes(tag) ? "selected" : ""}`}
@@ -63,10 +75,10 @@ const StepFour = ({ formData, setFormData, onPrevious }) => {
       </form>
       <span className="form-buttons">
         <Button buttonType="secondary" onClick={onPrevious}>
-          Previous
+          {generalString.previousButtonText}
         </Button>
         <Button type="submit">
-          Submit
+          {generalString.submitButtonText}
         </Button>
       </span>
     </div>
