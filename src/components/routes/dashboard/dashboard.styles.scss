@@ -1,0 +1,40 @@
+@import '../../../index.scss';
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 2fr;
+  gap: 1em;
+  height: 600px;
+
+  .block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $secondary-color;
+    font-weight: bold;
+    background: $secondary-background-color;
+    z-index: 100;
+    font-family: $lato;
+  }
+
+  .block1 {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+  }
+
+  .block2 {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+  }
+
+  .block3 {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .block4 {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}
