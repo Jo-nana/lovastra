@@ -5,6 +5,7 @@ import AstralTheme from './components/routes/astralTheme/astralTheme.component';
 import Horoscope from './components/routes/horoscope/horoscope.component';
 import Navigation from './components/routes/navigation/navigation.component';
 import SignUpForm from './components/form/signUp/signUpForm.component';
+import Dashboard from './components/routes/dashboard/dashboard.component';
 
 import './App.scss'
 
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="astralTheme" element={<AstralTheme />} />
         <Route path="horoscope" element={<Horoscope />} />
         <Route path="signUp" element={<SignUpForm />} />
+        <Route path="dashboard" element={<Dashboard/>} />
       </Route>
     </Routes>
   )

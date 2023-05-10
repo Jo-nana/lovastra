@@ -77,7 +77,7 @@ const StepFour = ({ formData, setFormData, onPrevious }) => {
         <Button buttonType="secondary" onClick={onPrevious}>
           {generalString.previousButtonText}
         </Button>
-        <Button type="submit">
+        <Button type="submit" to='/dashboard'>
           {generalString.submitButtonText}
         </Button>
       </span>
