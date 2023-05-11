@@ -8,7 +8,7 @@ const Dashboard = () => {
   const block1String = string.dashboard.block1;
 
   return (
-    <div className="container">
+    <div className="dashboard-container">
       <div className="block block1">
         <h1>{block1String.match}</h1>
         <Button>
