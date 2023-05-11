@@ -87,6 +87,14 @@ const strings ={
       animals: '🐱 Animals',
       nature: '🌳 Nature'
     }
+  },
+
+  dashboard: {
+
+    block1: {
+      match: 'We found for you 9 new matches!',
+      explore: 'Explore'
+    }
   }
 }
 
