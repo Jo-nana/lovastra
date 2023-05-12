@@ -6,23 +6,29 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 2fr;
-  gap: 1em;
+  gap: 2em;
   height: 600px;
 
   .block {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: $secondary-color;
-    font-weight: bold;
     background: $secondary-background-color;
     z-index: 100;
     font-family: $lato;
+    padding: 20px;
+    box-shadow: rgba(21, 16, 59, 0.4) 0px 7px 29px 0px;
   }
 
   .block1 {
     grid-column: 1 / span 2;
     grid-row: 1;
+
+    h1{
+      font-weight: 300;
+    }
   }
 
   .block2 {
@@ -33,10 +39,30 @@
   .block3 {
     grid-column: 1;
     grid-row: 2;
+
+    .sign-image{
+      width: 100%;
+      height: auto;
+    }
+
+    .small-card{
+      cursor: pointer;
+      p{
+        text-align: center;
+        font-weight: 200;
+        font-style: italic;
+      }
+    }
   }
 
   .block4 {
     grid-column: 2;
     grid-row: 2;
   }
+
+  .block-header{
+    margin: 20px 0;
+    font-weight: 300;
+  }
+
 }

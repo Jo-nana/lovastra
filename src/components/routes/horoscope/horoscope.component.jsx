@@ -5,6 +5,7 @@ import { HoroscopeContext } from '../../context/horoscope/horoscope.context';
 import './horoscope.styles.scss';
 import strings from '../../../string.js';
 
+// import signs Images
 import { signs } from '../../../signImages.js';
 
 const Horoscope = () => {

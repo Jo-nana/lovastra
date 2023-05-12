@@ -93,7 +93,11 @@ const strings ={
 
     block1: {
       match: 'We found for you 9 new matches!',
-      explore: 'Explore'
+      explore: 'Explore',
+    },
+
+    block3: {
+      horoscope: 'Horoscope of'
     }
   }
 }

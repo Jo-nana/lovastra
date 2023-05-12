@@ -11,6 +11,7 @@ const BUTTON_TYPES_CLASSES = {
 const Button = ({ children, buttonType, isDisabled, to, ...otherProps }) => {
   const buttonClass = `button-container ${BUTTON_TYPES_CLASSES[buttonType]}`;
 
+  // applying Link to the button component
   if (to) {
     return (
       <Link to={to} className={buttonClass} {...otherProps}>
