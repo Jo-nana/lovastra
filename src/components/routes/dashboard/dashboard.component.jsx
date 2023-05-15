@@ -1,8 +1,9 @@
 import './dashboard.styles.scss';
 import string from '../../../string';
-import users from '../../../user';
+
 import Button from '../../button/button.component'
 
+import {chatUsers} from '../../../user'
 import { signs } from '../../../signImages';
 
 const Dashboard = () => {
@@ -52,16 +53,12 @@ const Dashboard = () => {
         <div className="block-header">
           <h3>{block4String.headerText}</h3>
         </div>
-        <Button buttonType="chatButton">
-          {users.user2.username}
-        </Button>
-        <Button buttonType="chatButton">
-          {users.user3.username}
-        </Button>
-        <Button buttonType="chatButton">
-         {users.user4.username}
-        </Button>
-        <a>{block4String.seeAll}</a>
+        {chatUsers.map((user) => (
+          <Button buttonType="chatButton">
+            {user.username}
+          </Button>
+        ))}
+        <a href='/chats'>{block4String.seeAll}</a>
       </div>
     </div>
   )
