@@ -1,5 +1,6 @@
 import './dashboard.styles.scss';
 import string from '../../../string';
+import users from '../../../user';
 import Button from '../../button/button.component'
 
 import { signs } from '../../../signImages';
@@ -8,6 +9,7 @@ const Dashboard = () => {
   // variable to handle strings
   const block1String = string.dashboard.block1;
   const block3String = string.dashboard.block3;
+  const block4String = string.dashboard.block4
 
   //formated date of the day
   const currentDate = new Date();
@@ -47,7 +49,19 @@ const Dashboard = () => {
         </div>
       </div>
       <div className="block block4">
-        Block 4
+        <div className="block-header">
+          <h3>{block4String.headerText}</h3>
+        </div>
+        <Button buttonType="chatButton">
+          {users.user2.username}
+        </Button>
+        <Button buttonType="chatButton">
+          {users.user3.username}
+        </Button>
+        <Button buttonType="chatButton">
+         {users.user4.username}
+        </Button>
+        <a>{block4String.seeAll}</a>
       </div>
     </div>
   )

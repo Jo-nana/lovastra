@@ -17,7 +17,7 @@ const strings ={
   navigation:{
     menuAboutUs: 'About us',
     menuHoroscope: 'Horoscope',
-    menuAstralTheme: 'Astral theme'
+    menuAstralTheme: 'Birth chart'
   },
 
   horoscopePage:{
@@ -98,6 +98,11 @@ const strings ={
 
     block3: {
       horoscope: 'Horoscope of'
+    },
+
+    block4:{
+      headerText: 'Chats',
+      seeAll: 'See all your chats'
     }
   }
 }
