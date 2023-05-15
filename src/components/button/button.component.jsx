@@ -1,4 +1,7 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+
 import './button.styles.scss';
 import { Link } from 'react-router-dom';
 
@@ -18,6 +21,16 @@ const Button = ({ children, buttonType, isDisabled, to, ...otherProps }) => {
       <Link to={to} className={buttonClass} {...otherProps}>
         {children}
       </Link>
+    );
+  }
+
+   // Render the chatButton type with Font Awesome arrow icon
+   if (buttonType === 'chatButton') {
+    return (
+      <button className={buttonClass} disabled={isDisabled} {...otherProps}>
+        {children}
+        <FontAwesomeIcon icon={faArrowRight} className="fa-light fa-arrow-right" />
+      </button>
     );
   }
 

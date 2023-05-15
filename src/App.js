@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+
 import Home from './components/routes/home/home.component';
 import AboutUs from './components/routes/aboutUs/aboutUs.component';
 import AstralTheme from './components/routes/astralTheme/astralTheme.component';
