@@ -15,9 +15,9 @@ const strings ={
   },
 
   navigation:{
-    menuAboutUs: 'About us',
+    menuAboutUs: 'About Us',
     menuHoroscope: 'Horoscope',
-    menuAstralTheme: 'Birth chart'
+    menuAstralTheme: 'Birth Chart'
   },
 
   horoscopePage:{

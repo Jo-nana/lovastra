@@ -1,7 +1,7 @@
 import './dashboard.styles.scss';
 import string from '../../../string';
-
 import Button from '../../button/button.component'
+import handImage from '../../../assets/images/dashboard/hand.svg'
 
 import {chatUsers} from '../../../user'
 import { signs } from '../../../signImages';
@@ -30,6 +30,7 @@ const Dashboard = () => {
         <Button>
           {block1String.explore}
         </Button>
+        <img src={handImage} alt="hand" />
       </div>
       <div className="block block2">
         Block 2
