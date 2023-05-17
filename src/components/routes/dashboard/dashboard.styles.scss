@@ -25,9 +25,19 @@
   .block1 {
     grid-column: 1 / span 2;
     grid-row: 1;
+    position: relative;
+
 
     h1{
       font-weight: 300;
+    }
+
+    img{
+      width: 18%;
+      transform: rotate(10deg);
+      position: absolute;
+      right: 0;
+      bottom: 0;
     }
   }
 
