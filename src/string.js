@@ -96,6 +96,21 @@ const strings ={
       explore: 'Explore',
     },
 
+    block2:{
+      yourSign: 'You are a',
+      element: 'Element: air',
+      ruler: 'Ruler: Venus',
+      compatibility: 'Greatest compatibility: Aries, Sagitarrus',
+      character: 'Your character traits',
+      traits: [
+        'Coorperative',
+        'Diplomatic',
+        'Gracious',
+        'Fair-minded',
+        'Social'
+      ]
+    },
+
     block3: {
       horoscope: 'Horoscope of'
     },
@@ -104,6 +119,7 @@ const strings ={
       headerText: 'Chats',
       seeAll: 'See all your chats'
     }
+
   }
 }
 

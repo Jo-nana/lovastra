@@ -1,4 +1,4 @@
-// importing the images for each signs
+// importing the images for each signs horoscope page
 import ariesImage from './assets/images/logoSigns/aries.svg';
 import taurusImage from './assets/images/logoSigns/taurus.svg';
 import geminiImage from './assets/images/logoSigns/gemini.svg';
@@ -12,6 +12,8 @@ import capricornImage from './assets/images/logoSigns/capricorn.svg';
 import aquariusImage from './assets/images/logoSigns/aquarius.svg';
 import piscesImage from './assets/images/logoSigns/pisces.svg';
 
+// importing image for sign in dashboard
+import libraDashboardImage from './assets/images/dashboard/signs/dashboard-libra.svg';
 
 // array of objects for each sign
 export const signs = [
@@ -28,3 +30,9 @@ export const signs = [
   { name: 'Aquarius', imgSrc: aquariusImage },
   { name: 'Pisces', imgSrc: piscesImage }
 ];
+
+// object for sign image in dashboard
+export const dashboardSignImage = {
+  name: 'Libra',
+  imgSrc: libraDashboardImage
+}

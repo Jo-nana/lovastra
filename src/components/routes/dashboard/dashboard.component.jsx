@@ -5,12 +5,14 @@ import handImage from '../../../assets/images/dashboard/hand.svg'
 
 import {chatUsers} from '../../../user'
 import { signs } from '../../../signImages';
+import { dashboardSignImage } from '../../../signImages'
 
 const Dashboard = () => {
   // variable to handle strings
   const block1String = string.dashboard.block1;
   const block3String = string.dashboard.block3;
-  const block4String = string.dashboard.block4
+  const block4String = string.dashboard.block4;
+  const block2String = string.dashboard.block2
 
   //formated date of the day
   const currentDate = new Date();
@@ -33,7 +35,18 @@ const Dashboard = () => {
         <img src={handImage} alt="hand" />
       </div>
       <div className="block block2">
-        Block 2
+        <img src={dashboardSignImage.imgSrc} alt="libra" />
+        <h3>
+          {block2String.yourSign} <span>{dashboardSignImage.name}</span>!
+        </h3>
+        <p>{block2String.element}</p>
+        <p>{block2String.ruler}</p>
+        <p>{block2String.compatibility}</p>
+        <p>{block2String.character}</p>
+
+        {block2String.traits.map((trait) =>
+          <p>{trait}</p>
+        )}
       </div>
       <div className="block block3">
         <h3 className="block-header">
