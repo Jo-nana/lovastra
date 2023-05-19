@@ -44,6 +44,34 @@
   .block2 {
     grid-column: 3;
     grid-row: 1 / span 2;
+
+    h3{
+      font-weight: 300;
+      margin: 20px 0;
+      span{
+        color: $primary-color;
+      }
+    }
+
+    .text-bloc{
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+      font-weight: 200;
+      font-size: $large-font-size;
+    }
+    .traits-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Adjust based on the number of columns */
+      gap: 15px; /* Adjust the gap size */
+      justify-items: center;
+    }
+
+    .traits-container button:last-child {
+      grid-column: 1 / -1; /* Span across all columns */
+    }
+
+
   }
 
   .block3 {

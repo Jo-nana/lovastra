@@ -34,20 +34,26 @@ const Dashboard = () => {
         </Button>
         <img src={handImage} alt="hand" />
       </div>
+
       <div className="block block2">
         <img src={dashboardSignImage.imgSrc} alt="libra" />
         <h3>
           {block2String.yourSign} <span>{dashboardSignImage.name}</span>!
         </h3>
-        <p>{block2String.element}</p>
-        <p>{block2String.ruler}</p>
-        <p>{block2String.compatibility}</p>
-        <p>{block2String.character}</p>
-
-        {block2String.traits.map((trait) =>
-          <p>{trait}</p>
-        )}
+        <div className="text-bloc">
+          <p>{block2String.dates}</p>
+          <p>{block2String.element}</p>
+          <p>{block2String.ruler}</p>
+          <p>{block2String.compatibility}</p>
+        </div>
+        <h3>{block2String.character}</h3>
+        <div className="traits-container">
+          {block2String.traits.map((trait) =>
+            <Button buttonType="traitsButton">{trait}</Button>
+          )}
+        </div>
       </div>
+
       <div className="block block3">
         <h3 className="block-header">
           {block3String.horoscope} {formattedDate}
@@ -63,6 +69,7 @@ const Dashboard = () => {
             ))}
         </div>
       </div>
+
       <div className="block block4">
         <div className="block-header">
           <h3>{block4String.headerText}</h3>

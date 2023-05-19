@@ -98,6 +98,7 @@ const strings ={
 
     block2:{
       yourSign: 'You are a',
+      dates: 'Dates: September 23 - October 22',
       element: 'Element: air',
       ruler: 'Ruler: Venus',
       compatibility: 'Greatest compatibility: Aries, Sagitarrus',

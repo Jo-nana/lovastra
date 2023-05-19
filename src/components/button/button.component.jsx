@@ -9,7 +9,8 @@ import { Link } from 'react-router-dom';
 const BUTTON_TYPES_CLASSES = {
   secondary: 'button-secondary',
   small: 'small-primary',
-  chatButton: 'chat-button'
+  chatButton: 'chat-button',
+  traitsButton: 'traits-button'
 };
 
 const Button = ({ children, buttonType, isDisabled, to, ...otherProps }) => {
