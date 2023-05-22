@@ -1,4 +1,4 @@
-import { NavLink, Outlet, Link } from 'react-router-dom';
+import { NavLink, Outlet, Link, useLocation } from 'react-router-dom';
 import { Fragment } from 'react';
 import Button from '../../button/button.component.jsx';
 
@@ -9,6 +9,14 @@ import Sun from '../../../assets/images/sun.svg';
 import './navigation.styles.scss';
 
 const Navigation = () => {
+  const location = useLocation();
+
+  // Check if the current location is the dashboard page
+  const isDashboardPage = location.pathname === "/dashboard";
+
+  //Handle strings
+  const navigationSring = strings.navigation;
+
   return (
     <Fragment>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -20,15 +28,69 @@ const Navigation = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
-              <li className="nav-item">
-                <NavLink className="nav-link" activeClassName="active" to="/aboutus">{strings.navigation.menuAboutUs}</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" activeClassName="active" to="/horoscope">{strings.navigation.menuHoroscope}</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" activeClassName="active" to="/astraltheme">{strings.navigation.menuAstralTheme}</NavLink>
-              </li>
+            {isDashboardPage ? (
+                // Render the navigation options for the dashboard page
+                <>
+                  <li className="nav-item">
+                    <NavLink
+                      className="nav-link"
+                      activeClassName="active"
+                      to="/find-match"
+                    >
+                      {navigationSring.menuMatch}
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink
+                      className="nav-link"
+                      activeClassName="active"
+                      to="/chatroom"
+                    >
+                      {navigationSring.menuChat}
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink
+                      className="nav-link"
+                      activeClassName="active"
+                      to="/profile"
+                    >
+                      {navigationSring.menuProfile}
+                    </NavLink>
+                  </li>
+                </>
+              ) : (
+                // Render the default navigation options
+                <>
+                  <li className="nav-item">
+                    <NavLink
+                      className="nav-link"
+                      activeClassName="active"
+                      to="/aboutus"
+                    >
+                      {navigationSring.menuAboutUs}
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink
+                      className="nav-link"
+                      activeClassName="active"
+                      to="/horoscope"
+                    >
+                      {navigationSring.menuHoroscope}
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink
+                      className="nav-link"
+                      activeClassName="active"
+                      to="/astraltheme"
+                    >
+                      {navigationSring.menuAstralTheme}
+                    </NavLink>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
           <Button id="small-primary" className="button-container ml-auto">{strings.general.loginButtonText}</Button>

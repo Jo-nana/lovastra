@@ -17,7 +17,10 @@ const strings ={
   navigation:{
     menuAboutUs: 'About Us',
     menuHoroscope: 'Horoscope',
-    menuAstralTheme: 'Birth Chart'
+    menuAstralTheme: 'Birth Chart',
+    menuMatch: 'Find a match',
+    menuChat: 'Chatroom',
+    menuProfile: 'Profile'
   },
 
   horoscopePage:{
